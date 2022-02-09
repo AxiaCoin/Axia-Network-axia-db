@@ -1,0 +1,38 @@
+[package]
+name = "axia-db"
+version = "0.3.5"
+authors = ["AXIA Technologies <admin@axiacoin.network>"]
+edition = "2021"
+license = "MIT OR Apache-2.0"
+homepage = "https://axlib.dev"
+repository = "https://github.com/axia-tech/axia-db/"
+description = "Key-value database for the blockchain"
+
+[dependencies]
+log = "0.4.8"
+parking_lot = "0.11"
+memmap2 = "0.2"
+blake2-rfc = "0.2.18"
+libc = "0.2"
+crc32fast = "1.2.0"
+rand = "0.8.2"
+hex = "0.4.2"
+fs2 = "0.4.3"
+lz4 = "1.23.2"
+snap = "1"
+
+[dev-dependencies]
+env_logger = "0.8.2"
+tempfile = "3.2"
+
+[profile.release]
+panic = "abort"
+#codegen-units = 1
+#lto = "fat"
+debug = true
+
+[workspace]
+members = [
+	".",
+	"admin",
+]
